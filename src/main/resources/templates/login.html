@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+     <head>
+        <title>Baron Solar System</title>
+        <link rel="icon" type="image/jpg" href="assets/img/mainicon.jpg">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/stylelogin.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+       
+    </head>
+    <body>
+        <header>
+            <a href="main" class="logo">BARON SOLAR SYSTEM</a>
+            <nav class="navigation">
+                <a href="main#projects" class="service-btn">Projects</a>
+                <a href="main#contact" class="contact-btn">Contact</a>
+                <a href="" class="login-btn">Login</a>
+                
+            </nav>
+        </header>
+        
+        <section class="main">
+            <div class="card">
+                <form th:action="@{/login}" method="post"  class="login-form">
+                <h1> Login </h1>
+                <p th:if="${loginError}" class="error"></p>
+                <div th:if="${param.error}">
+				  <div class="alert alert-danger">
+				  <span th:text="#{login.error}"/>
+				  
+				  </div>
+				  
+				  </div>
+                <div class="input-box">
+                    <input type="name" class="form-control" id="username" name="username"placeholder="Username" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name ="password" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+                
+            </div>
+            
+            
+        </section>
+        
+        <footer class="footer">
+            <p> Copyrights @ <span>Nancy Hamdallah</span></p>
+            <nav>
+                <a href="facebook-developer" ><i class="fa-brands fa-facebook" style="color: #2a6cdf;"></i></a>
+                <a href="instagram-developer" ><i class="fa-brands fa-instagram" style="color: #2a6cdf;"></i></a>
+            </nav>
+               
+        </footer>
+    </body>
+</html>

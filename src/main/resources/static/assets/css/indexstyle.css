@@ -1,0 +1,225 @@
+@charset "windows-1256";
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Nov 9, 2023, 12:00:52 PM
+    Author     : Lenovo
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    font-family: "Poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+header{
+    background-color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+        
+}
+.logo{
+    padding: 1em;
+    color: #1589FF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    
+}
+.navigation{
+    padding: 1.2em;
+}
+
+.navigation a{
+	padding: 0.5em;
+    text-decoration: none;
+    color: #1589FF;
+    font-weight:300;
+    font-size: 1.1em;
+   
+    
+}
+.service-btn:hover{
+    text-decoration: underline;
+}
+.contact-btn:hover{
+    text-decoration: underline;
+}
+.logout-btn:hover{
+    text-decoration: underline;
+}
+
+.sidenav {
+  height: 100%;
+  width: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.section-all{
+    padding-top : 100px ;
+    padding-left: 110px;
+    min-height: 100vh;
+    
+    
+       
+}
+.title{
+    color: #1589FF;
+    display: flex;
+    justify-content: left;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin: 20px 10px 10px 10px;
+    
+}
+.content-cards{
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    
+}
+
+.card{
+    background-color: white;
+    width: auto;
+    height: auto;
+    box-shadow: 0 5px 25px rgba(1,1,1,.30);
+    padding: 0px;
+    margin: 10px;
+    border: 5px solid #dedcdc;
+    backdrop-filter: blur(20px);
+}
+.table{
+		
+        justify-content: space-between;
+        display: table;
+}
+.table-head{
+	padding:10px;
+}
+
+
+.circle{
+	  
+	  height: 25px;
+	  width: 25px;
+	  border-radius: 50%;	  
+	  display: inline-block;
+
+}
+
+.table-data td a{
+	text-decoration: none;
+}
+
+.footer{
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #f0f0f0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position:absolute;
+    padding: 1em;
+}
+.footer span{
+    color: #1589FF;
+    
+}
+.footer nav a{
+    font-size: 16px;
+    padding: 5px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #fefefe;
+  color: #1589FF;
+  font-size: 20px;
+}
+
+.modal-body {
+	padding: 2px 16px;
+	}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #fefefe;
+  color: #1589FF;
+}
+
+
+

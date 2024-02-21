@@ -1,0 +1,240 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Nov 9, 2023, 12:00:52 PM
+    Author     : Lenovo
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    font-family: "Poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+header{
+    background-color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+        
+}
+.logo{
+    padding: 1em;
+    color: #1589FF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    
+}
+.navigation{
+    padding: 1.2em;
+}
+.navigation a{
+    padding: 0.5em;
+    text-decoration: none;
+    color: #1589FF;
+    font-weight:300;
+    font-size: 1.1em;
+   
+    
+}
+.service-btn:hover{
+    text-decoration: underline;
+}
+.contact-btn:hover{
+    text-decoration: underline;
+}
+.logout-btn:hover{
+    text-decoration: underline;
+}
+
+
+
+.main{
+    padding: 200px 100px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    text-align: center;
+    background: url("../img/background2.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  
+}
+.main::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: -55px;
+    left: 0px;
+    background-color: rgba(255,255,255,0.75);
+    background-attachment: fixed;
+    
+    
+}
+.content-main{
+    
+  position: relative;
+  color:#1589FF ;  
+  font-size: 1rem;
+  margin: 2em;
+  text-align: center;
+  
+  
+}
+.heading-two{
+    font-weight: 300;
+    margin-bottom: 0.5em;
+    
+}
+
+.main-btn{
+    text-decoration: none;
+    color: white;
+    background-color: #1589FF;
+    padding: .7em;
+    display: inline-block;
+    margin-bottom: .8em;
+    border-radius: 15px;
+    transition: 0.7s ease;
+    font-size: .8em;
+    
+}
+.main-btn:hover{
+    background-color: #0070e1;
+    transform: scale(1.1);
+    
+}
+
+.social-icons a{
+    font-size: 1.3em;
+    padding-right: 0.3em;
+    
+}
+
+.title{
+    color: #1589FF;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 30px;
+    
+}
+.content-cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    
+}
+
+.card{
+    background-color: white;
+    width: 21.25em;;
+    box-shadow: 0 5px 25px rgba(1,1,1,.30);
+    border-radius: 10px;
+    padding: 3px;
+    margin: 15px;
+    transition: 0.7s ease;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.project-video{
+    max-width: 100%;
+    border-radius: 10px;
+    
+}
+.project-description{
+    padding: 15px 10px 10px 10px;
+    font-weight: 600;
+    color: #1589FF;
+    
+}
+.section-all{
+    min-height: 100vh;
+    margin-bottom: 7em;
+    padding-bottom: 6em;
+    padding-top: 2em;
+       
+}
+
+
+.contact{
+   
+    background-color: #0260bf;
+    opacity: 70%;
+    padding-bottom: 15em;
+    padding-top: 2em;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    max-height: 100%
+    
+}
+.contact .title{
+    color: white;
+    
+}
+
+.icon{
+    color: #1589FF;
+    font-weight: 400;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    
+}
+
+.contact .content-cards .card{
+    width: 15em;
+    padding: 15px;
+    margin: 15px;
+    
+}
+
+.description{
+    color: #1589FF;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+
+.footer{
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #f0f0f0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.footer span{
+    color: #1589FF;
+    
+}
+.footer nav a{
+    font-size: 16px;
+    padding: 5px;
+}
+
+
+

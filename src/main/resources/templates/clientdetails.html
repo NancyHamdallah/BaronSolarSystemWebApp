@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Baron Solar System</title>
+  <link rel="icon" type="image/jpg" href="assets/img/mainicon.jpg">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+ 
+	  <link href="assets/css/clientstyle.css" rel="stylesheet">
+
+ 
+</head>
+
+<body>
+
+  
+  <header>
+            <a href="" class="logo">
+            BARON SOLAR SYSTEM
+            </a>
+            <nav class="navigation">
+                <a href="#projects" class="service-btn">Projects</a>
+                <a href="#contact" class="contact-btn">Contact</a>
+              	<a  href="/logout"class="logout-btn" >Logout</a>
+			
+            </nav>
+        </header>
+        
+ <section class="mainsection">
+<section id="details" >
+
+
+	<h2 class="name">[[${clientdetails[0][1]}]]</h2>
+	<form th:action="@{/clientprodmonth}" method="get">
+		<input type="month" id="month" name="month" >
+		
+		<button type="submit" class="btn btn-primary">view Details</button>
+		<button class="btn btn-primary" onclick="tableToCSV()">Export</button>
+	</form>
+	
+	
+
+</section>
+
+<section id="production" >
+
+ <div >
+                   
+                            <!-- Table with stripped rows -->
+              <table class="table table-sm table-striped">
+                <thead class="thead-dark">
+                  <tr class="table-head">
+                    <th>Date</th>
+                    <th> Production</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each = "production:${productiondetails}" class="table-data" >
+                    
+                    
+                    
+                    <td th:text="${production[0]}"></td>
+                    <td th:text="${production[1]}"></td>
+                   
+					
+                  </tr>
+                  
+                  
+                </tbody>
+              </table>
+              
+                                            
+                </div>
+
+</section>
+
+</section>
+        
+        
+        
+        
+  <!-- ======= Footer ======= 
+  <footer class="footer">
+            <p> Copyrights @ <span>Nancy Hamdallah</span></p>
+            <nav>
+                <a href="facebook-developer" ><i class="fa-brands fa-facebook" style="color: #2a6cdf;"></i></a>
+                <a href="instagram-developer" ><i class="fa-brands fa-instagram" style="color: #2a6cdf;"></i></a>
+            </nav>
+               
+        </footer><!-- End Footer -->
+
+	
+<script th:inline="javascript">
+
+
+const clientId = document.getElementById("clientId");
+
+var list = /*[[${clientdetails}]]*/ [];
+//clientId.textContent="ClientId = "+list[0][0];
+
+
+let date = new Date();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+console.log(year,month);
+document.getElementById("month").value = year+'-'+month;
+
+let val = document.querySelector('input[type="month"]');
+console.log(val + typeof(val));
+let monthVal;
+val.addEventListener('change',function (){
+  monthVal=val.value.slice(5);
+                        console.log(monthVal);
+                        console.log(typeof(val.value))
+                    });
+
+
+
+
+</script>
+
+<script type="text/javascript">
+        function tableToCSV() {
+ 
+            // Variable to store the final csv data
+            let csv_data = [];
+ 
+            // Get each row data
+            let rows = document.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+ 
+                // Get each column data
+                let cols = rows[i].querySelectorAll('td,th');
+ 
+                // Stores each csv row data
+                let csvrow = [];
+                for (let j = 0; j < cols.length; j++) {
+ 
+                    // Get the text data of each cell
+                    // of a row and push it to csvrow
+                    csvrow.push(cols[j].innerHTML);
+                    console.log(cols[j].innerHTML);
+                    console.log("\n");
+                    
+                }
+ 
+                // Combine each column value with comma
+                csv_data.push(csvrow.join(","));
+            }
+ 
+            // Combine each row data with new line character
+            csv_data = csv_data.join('\n');
+            
+            // Call this function to download csv file  
+            downloadCSVFile(csv_data);
+ 
+        }
+ 
+        function downloadCSVFile(csv_data) {
+ 
+            // Create CSV file object and feed
+            // our csv_data into it
+            CSVFile = new Blob([csv_data], {
+                type: "text/csv"
+            });
+ 
+            // Create to temporary link to initiate
+            // download process
+            let temp_link = document.createElement('a');
+ 
+            // Download csv file
+            temp_link.download = "ProductionDetails.csv";
+            let url = window.URL.createObjectURL(CSVFile);
+            temp_link.href = url;
+ 
+            // This link should not be displayed
+            temp_link.style.display = "none";
+            document.body.appendChild(temp_link);
+ 
+            // Automatically click the link to
+            // trigger download
+            temp_link.click();
+            document.body.removeChild(temp_link);
+        }
+    </script>
+ 
+
+</body>
+
+</html>

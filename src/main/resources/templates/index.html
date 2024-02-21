@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Baron Solar System</title>
+  <link rel="icon" type="image/jpg" href="assets/img/mainicon.jpg">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+ 
+	  <link href="assets/css/indexstyle.css" rel="stylesheet">
+
+ 
+</head>
+
+<body>
+
+  
+  <header>
+            <a href="main" class="logo">
+            BARON SOLAR SYSTEM
+            </a>
+            <nav class="navigation">
+                <a href="/main#projects" class="service-btn">Projects</a>
+                <a href="/main#contact" class="contact-btn">Contact</a>
+              	<a  href="/logout"class="logout-btn" >Logout</a>
+			
+            </nav>
+        </header>
+ 
+
+
+
+
+<div class="sidenav">
+</div>
+
+<section class="section-all" id="clients" >
+            <h2 class="title" >Clients</h2>
+            <div class="content-cards">
+                <div class="card">
+                   
+                            <!-- Table with stripped rows -->
+              <table class="table table-sm table-striped">
+                <thead class="thead-dark">
+                  <tr class="table-head">
+                    <th>Site Name</th>
+                    
+                    <th>System Size(kW)</th>
+                    <th>System Type</th>
+                    <th> Daily Production</th>
+                    <th>Monthly Production</th>
+                    <th> Status </th>
+                    <th> Details</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each = "client:${clients}" class="table-data" >
+                    
+                    
+                    <td>
+					    <a th:href="@{/clientProd(id=${client[0]})}" th:text="${client[1]}" target="_blank" /></a>					</td>
+                  
+                    <td th:text="${client[3]}"></td>
+                    <td th:text="${client[4]}"></td>
+                    <td th:text= "${client[5]}"></td>
+                    <td th:text= "${client[6]}"></td>
+                   <td  id="status" > <div class="circle" ></div></td>
+                    <td><a th:href="@{/clientProd(id=${client[0]})}"  id="showProduction" class="btn btn-primary"> View</a></td>
+					
+                  </tr>
+                  
+                  
+                </tbody>
+              </table>
+              
+                                            
+                </div>
+            </div>
+</section>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2></h2>
+    </div>
+    <div class="modal-body">
+                   <!-- Table with stripped rows -->
+              <table class="table table-sm table-striped">
+                <thead class="thead-dark">
+                  <tr class="table-head">
+                    <th>Date</th>
+                    <th> Production</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each = "production:${productiondetails}" class="table-data" >
+                    
+              
+                  </tr>
+                  
+                  
+                </tbody>
+              </table>
+    </div>
+    <div class="modal-footer">
+      <h3>Download</h3>
+    </div>
+  </div>
+
+</div>
+    
+
+
+              
+             
+              <!-- End Table with stripped rows -->
+            
+
+            
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+            <p> Copyrights @ <span>Nancy Hamdallah</span></p>
+            <nav>
+                <a href="facebook-developer" ><i class="fa-brands fa-facebook" style="color: #2a6cdf;"></i></a>
+                <a href="instagram-developer" ><i class="fa-brands fa-instagram" style="color: #2a6cdf;"></i></a>
+            </nav>
+               
+        </footer><!-- End Footer -->
+
+
+	
+<script th:inline="javascript">
+
+
+const dataCells = document.getElementsByClassName("circle");
+
+var list = /*[[${statusesArray}]]*/ [];
+for(let i=0;i<list.length;i++){
+console.log(list[i]);
+//dataCells[i].textContent=list[i];
+if(list[i]=="Green"){
+	dataCells[i].style.backgroundColor="green";
+	console.log("isGreen");
+}
+else if(list[i]=="Orange"){
+	dataCells[i].style.backgroundColor="orange";
+	console.log("isOrange");
+}
+else{
+	dataCells[i].style.backgroundColor="red";
+	console.log("isRed");
+}
+}
+
+//Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("btn-details");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+/*
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+*/
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+</script>
+
+  
+  <!-- Template Main JS File -->
+ 
+
+</body>
+
+</html>

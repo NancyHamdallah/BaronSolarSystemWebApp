@@ -1,0 +1,113 @@
+@charset "windows-1256";
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    font-family: "Poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+header{
+    background-color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+        
+}
+.logo{
+    padding: 1em;
+    color: #1589FF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    
+}
+.navigation{
+    padding: 1.2em;
+}
+
+.navigation a{
+	padding: 0.5em;
+    text-decoration: none;
+    color: #1589FF;
+    font-weight:300;
+    font-size: 1.1em;
+   
+    
+}
+.service-btn:hover{
+    text-decoration: underline;
+}
+.contact-btn:hover{
+    text-decoration: underline;
+}
+.logout-btn:hover{
+    text-decoration: underline;
+}
+
+
+
+
+.mainsection{
+	padding-top: 120px;
+	padding-left: 20px;
+	padding-right: 180px;
+	background-color: #416AA3;
+	width: 100%;
+    min-height: 90vh;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.btn{
+	margin-left:3px;
+	transition: 0.7s ease;
+}
+.btn:hover{
+	transform: scale(1.1);
+}
+
+#production{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	width: 400px;
+	height: 100%;
+}
+
+.name{
+	color:white;
+	font-weight:300;
+	font-size:30px;
+	margin-right: 400px;
+	padding: 10px;
+	margin-bottom: 10px;
+	
+}
+
+#csv{
+    position: relative;
+    margin:30px;
+    height:30px;
+    width: 150px;
+    background: #1589FF;
+    border: 3px solid rgba(21, 137, 255,0.2);
+    border-radius: 40px;
+    transition: 0.7s ease;
+    font-size: 0.9rem;
+}
+
+#csv:hover{
+    transform: scale(1.1);
+}
+

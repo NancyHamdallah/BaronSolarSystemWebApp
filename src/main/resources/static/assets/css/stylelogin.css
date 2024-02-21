@@ -1,0 +1,167 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Nov 14, 2023, 9:15:24 AM
+    Author     : Lenovo
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+        
+}
+
+header{
+    background-color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+        
+}
+.logo{
+    padding: 1em;
+    color: #1589FF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    
+}
+.navigation{
+    padding: 1.2em;
+}
+.navigation a{
+    padding: 0.5em;
+    text-decoration: none;
+    color: #1589FF;
+    font-weight:300;
+    font-size: 1.1em;
+   
+    
+}
+.service-btn:hover{
+    text-decoration: underline;
+}
+.contact-btn:hover{
+    text-decoration: underline;
+}
+.login-btn:hover{
+    text-decoration: underline;
+}
+
+
+
+.main{
+    padding-top:  80px;
+    padding-right: 0px;
+    padding-left: 900px;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    text-align: center;
+    background: url(../img/loginBackground.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  
+}
+.main::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: -55px;
+    left: 0px;
+    background-color: rgba(255,255,255,0.5);
+    background-attachment: fixed;
+    
+    
+}
+
+.card{
+    
+    position: relative;
+    color:#1589FF ;  
+    font-size: 1rem;
+    background-color: transparent;
+    width: 25.25em;;
+    box-shadow: 0 5px 25px rgba(1,1,1,.30);
+    border-radius: 10px;
+    padding: 100px 3px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(20px);
+    
+}
+
+.card .input-box{
+    position: relative;
+    margin:30px 0;
+    height:30px;
+    width: 250px;
+    
+}
+
+.input-box input{
+    height:100%;
+    width: 100%;
+    border: 3px solid rgba(21, 137, 255,0.2);
+    border-radius: 40px;
+    background: transparent;
+    padding:10px;
+    outline:none;
+    
+}
+
+.input-box i{
+    position: absolute;
+    right:20px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+.btn{
+    position: relative;
+    margin:30px 0;
+    height:30px;
+    width: 250px;
+    background: #1589FF;
+    border: 3px solid rgba(21, 137, 255,0.2);
+    border-radius: 40px;
+    transition: 0.7s ease;
+    font-size: 0.9rem;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
+.footer{
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #f0f0f0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    margin-bottom: 0;
+}
+.footer span{
+    color: #1589FF;
+    
+}
+.footer nav a{
+    font-size: 16px;
+    padding: 5px;
+}
+
